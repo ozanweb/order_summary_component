@@ -8,30 +8,209 @@
   
   <title>Frontend Mentor | Order summary card</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+
+    /* Imports Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&display=swap');
+
+
+    html {
+      font-family: 'Red Hat Display', sans-serif;
+      color: hsl(225, 100%, 94%);
+      color: hsl(245, 75%, 52%);
+      color: hsl(225, 100%, 98%);
+      color: hsl(224, 23%, 55%);
+      color: hsl(223, 47%, 23%)
+    }
+
+    :root {
+      font-size: calc(2vw + .5em);
+      
+    }
+
+    /* This resets browser's default CSS setting to ZERO! to see the big picture */
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: hsl(225, 100%, 94%);
+      background-image: url(/images/pattern-background-mobile.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      min-width: 375px;
+
+    }
+
+    /* Centering elements vertically using display:table */
+
+    .wrapper { /* Don't apply background-color*/
+      height: 100vh;
+      display: table;
+      margin: 0 auto;
+      width: 20rem;
+    }
+
+    .container { /* Don't apply background-color*/
+      display: table-cell; 
+      vertical-align: middle;
+    }
+
+    /* break point */
+
+    @media screen and (min-width: 640px) {
+      :root {
+        font-size: 2vw;
+      }
+      .wrapper {
+        width: 35%;
+      }
+    }
+
+
+
+    img {
+      display: block; /* Set this as default for all of your projects */
+      width: 100%;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .text {
+      padding: 0 1.5rem;
+      text-align: center;
+      color: hsl(224, 23%, 55%);
+      background-color: white;
+      border-radius: 0 0 1rem 1rem;
+      box-shadow: 0px 3px 12px hsl(224, 23%, 85%);
+    }
+
+    .text h1 {
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 900;
+      padding-top: 1.5rem;
+    }
+
+    .text p {
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 1.2rem 0;
+    }
+   
+    .plan {
+      font-size: 1rem;
+      background-color: hsl(224, 23%, 97%);
+      display: flex;
+      border-radius: .75rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Using 'rem' unit */
+
+    .plan img {
+      width: 4rem; 
+      padding: 1rem 0 1rem .75rem;
+    }
+
+    .plan span {
+      width: 8rem;
+      text-align: left;
+      padding: 1rem;
+    }
+
+    .plan span::first-line {
+      color: black;
+      font-weight: 700;
+    }
+
+    .change {
+      display: inline-block;
+      color: hsl(245, 75%, 52%);
+      background-color: transparent;
+      border: none;
+      text-decoration: underline;
+      font-weight: 700;
+      font-size: .9rem;
+      width: 4rem;
+      padding: 1rem 0;
+    }
+
+    .change:hover {
+      color: hsl(245, 75%, 65%);
+      text-decoration: none;
+    }
+
+    .proceed {
+      display: block;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      background-color: hsl(245, 75%, 52%);
+      border: none;
+      color: white;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: .75rem;
+    }
+
+    .proceed:hover {
+      background-color: hsl(245, 75%, 65%);
+    }
+
+    .cancel {
+      display: inline-block;
+      color:hsl(224, 23%, 55%);
+      background-color: transparent;
+      border: none;
+      padding: 1.5rem 0;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .cancel:hover {
+      color:hsl(224, 23%, 1%);
+    }
+
+
+
   </style>
 </head>
 <body>
-
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="wrapper">
+    <div class="container">
+      <img src="/images/illustration-hero.svg" alt="a guy with headphones listening to music">
+      <div class="text">
+        <h1>Order Summary</h1>
+        <p>
+          You can now listen to millions of songs, audiobooks, and podcasts on any
+          device anywhere you like!
+        </p>
+        <div class="plan">
+          <img src="/images/icon-music.svg" alt="a note">
+          <span>
+            Annual Plan<br>
+            $59.99/year
+          </span>
+          <button class="change">Change</button>
+         
+        </div>
+        <button class="proceed">
+          Proceed to Payment
+        </button>
+        
+        <button class="cancel">Cancel Order</button>
+      </div>
+      
+    </div>
   </div>
+  
+  
+
 </body>
 </html>
